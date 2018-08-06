@@ -20,4 +20,14 @@ let main argv =
     let sumOfSquareRange0_100 = sumOfSquare range0_10
     printfn "Sum of Squares(%d->%d)=%d" range1_10.Head (lastItem range1_10) sumOfSquareRange0_100
 
+    // Option(Some/None) & pattern matching
+    let optionValue = Some(42)
+    
+    let printOption o = match o with 
+        | Some i -> printf "value is %d" i 
+        | None -> printf "value is none"
+    printOption optionValue
+
+
+
     0 // return an integer exit code
