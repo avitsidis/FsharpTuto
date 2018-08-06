@@ -24,10 +24,17 @@ let main argv =
     let optionValue = Some(42)
     
     let printOption o = match o with 
-        | Some i -> printf "value is %d" i 
-        | None -> printf "value is none"
+        | Some i -> printfn "value is %d" i 
+        | None -> printfn "value is none"
     printOption optionValue
 
+    //Tuples
+    let tuple = 1,"username",true
+    let id,username, active = tuple
+    printfn "user id is:%d" id
+
+    let id2 = match tuple with (id,_,_)  -> id // use _ to ignore tuple properties
+    printfn "user id is:%d" id2
 
 
     0 // return an integer exit code
